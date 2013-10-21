@@ -1,0 +1,43 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:background="#EFEFEF">
+
+  <ImageView 
+		android:id="@+id/listview_header"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:contentDescription="@string/logo_desc"
+    android:layout_marginTop="100dp"
+    android:src="@drawable/coolworld_logo"/>
+    
+	<TextView 
+    android:id="@+id/countrySelectdescription"
+	  android:layout_height="wrap_content"
+	  android:layout_width="fill_parent"
+	  android:gravity="center_horizontal"
+	  android:paddingTop="30dp"
+	  android:paddingBottom="30dp"
+	  android:paddingLeft="10dp"
+	  android:paddingRight="10dp"
+	  android:text="@string/countrySelectDescription"
+    android:layout_below="@id/listview_header"/>
+	
+    <ListView
+        android:id="@+id/list"
+        android:layout_below="@id/countrySelectdescription"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:divider="#b5b5b5"
+        android:dividerHeight="1dp"
+        android:listSelector="@drawable/list_selector" />
+
+	 <RelativeLayout
+	    android:layout_width="fill_parent"
+	    android:layout_height="4dp"
+	    android:background="#D2D2D2"
+	    android:id="@+id/relativeLayout"
+	    android:layout_below="@id/countrySelectdescription"
+	    android:layout_alignParentLeft="true"/>
+
+</RelativeLayout>
