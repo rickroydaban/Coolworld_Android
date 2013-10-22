@@ -1,0 +1,48 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:background="#EFEFEF">    
+    
+	 <ImageView 
+			android:id="@+id/listview_header"
+	   android:layout_width="fill_parent"
+	   android:layout_height="wrap_content"
+	   android:contentDescription="@string/logo_desc"
+	   android:layout_marginTop="100dp"
+	   android:src="@drawable/coolworld_logo"/>
+	     
+  	<LinearLayout 
+      android:id="@+id/listview_header_container"
+      android:layout_below="@id/listview_header"
+      android:layout_height="wrap_content"
+      android:layout_width="fill_parent"
+      android:padding="10dp"
+      android:background="#DEDEDE">
+      
+			<EditText 
+			  android:id="@+id/searchField"
+			  android:layout_marginTop="10dp"
+			  android:layout_width="fill_parent"
+			  android:layout_height="wrap_content"
+			  android:hint="@string/searchHint"/>
+			
+  </LinearLayout>  
+	
+    <ListView
+        android:id="@+id/list"
+        android:layout_below="@id/listview_header_container"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:divider="#b5b5b5"
+        android:dividerHeight="1dp"
+        android:listSelector="@drawable/list_selector" />
+
+	 <RelativeLayout
+	    android:layout_width="fill_parent"
+	    android:layout_height="4dp"
+	    android:background="#D2D2D2"
+	    android:id="@+id/relativeLayout"
+	    android:layout_below="@id/countrySelectdescription"
+	    android:layout_alignParentLeft="true"/>
+
+</RelativeLayout>

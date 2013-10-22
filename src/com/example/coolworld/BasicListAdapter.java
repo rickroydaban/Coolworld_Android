@@ -3,7 +3,8 @@ package com.example.coolworld;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import projects.coolworld.threads.ImageDownloader;
+import com.example.coolworld.threads.ImageDownloader;
+
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -20,14 +21,12 @@ public class BasicListAdapter extends BaseAdapter {
     private ArrayList<HashMap<String, String>> data;
     private static LayoutInflater inflater=null;
     private ProgressDialog progressDialog;
-    private String target;
     
-    public BasicListAdapter(Activity a, ArrayList<HashMap<String, String>> d, ProgressDialog p, String pTarget) {
+    public BasicListAdapter(Activity a, ArrayList<HashMap<String, String>> d, ProgressDialog p) {
     		System.out.println("Instantiated a new list adapter!");
         activity = a;
         data=d;
         progressDialog = p;
-        target = pTarget;
         inflater = (LayoutInflater)activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
@@ -56,9 +55,9 @@ public class BasicListAdapter extends BaseAdapter {
           
           // Setting all values in listview
           countryName.setText(country.get("localName"));           
-          target = activity.getResources().getString(R.string.urlRootLink)+country.get("flag");
+          String imageUrl = activity.getResources().getString(R.string.urlRootLink)+country.get("flag");
           
-        	new Thread(new ImageDownloader(activity, countryFlag, target, progressDialog)).start();
+        	new Thread(new ImageDownloader(activity, countryFlag, imageUrl, progressDialog)).start();
         
         }
         return vi;

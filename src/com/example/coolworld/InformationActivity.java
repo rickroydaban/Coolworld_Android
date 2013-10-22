@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import projects.coolworld.threads.InformationListMaker;
+import com.example.coolworld.threads.InformationListMaker;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;

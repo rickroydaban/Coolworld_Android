@@ -1,6 +1,7 @@
 package com.example.coolworld;
 
-import projects.coolworld.threads.SigninAuthenticator;
+import com.example.coolworld.threads.SigninAuthenticator;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;

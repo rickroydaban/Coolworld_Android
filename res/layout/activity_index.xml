@@ -51,6 +51,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                style="@android:attr/buttonBarButtonStyle"
                 android:text="@string/signinButtonString"/>
             
             <Button 
@@ -58,7 +59,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/signupButtonString"/>
+                style="@android:attr/buttonBarButtonStyle"
+	              android:text="@string/signupButtonString"/>
             
         </LinearLayout>
 
@@ -66,14 +68,15 @@
             android:id="@+id/apuriButton"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:textColor="#000"
 						android:gravity="center_horizontal"
-            android:text="@string/apuriButtonString"/>
+	          android:text="@string/apuriButtonString"/>
             
         <TextView 
             android:id="@+id/creditsText"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:textSize="10sp"
+            android:textSize="12sp"
 						android:gravity="center_horizontal"
 						android:layout_marginTop="100dp"
             android:textAlignment="center"

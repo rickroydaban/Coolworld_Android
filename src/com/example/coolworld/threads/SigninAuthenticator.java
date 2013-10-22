@@ -1,4 +1,4 @@
-package projects.coolworld.threads;
+package com.example.coolworld.threads;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -57,6 +57,10 @@ public class SigninAuthenticator extends AsyncTask<String, Void, String> {
 				Toast.makeText(signinActivity, "Login Failed!", Toast.LENGTH_SHORT).show();
 			}else{
 				Intent i = new Intent(signinActivity, BasicListActivity.class);
+				i.putExtra("tags", "prop:countries");
+				i.putExtra("f", "getAllData");
+				i.putExtra("nextActivity", "makeCoolsiteList");
+				
 				signinActivity.startActivity(i);
 			}
 		}

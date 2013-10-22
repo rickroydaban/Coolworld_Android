@@ -1,4 +1,4 @@
-package projects.coolworld.threads;
+package com.example.coolworld.threads;
 
 import java.io.IOException;
 import java.util.ArrayList;

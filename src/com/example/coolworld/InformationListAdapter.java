@@ -3,7 +3,8 @@ package com.example.coolworld;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import projects.coolworld.threads.ImageDownloader;
+import com.example.coolworld.threads.ImageDownloader;
+
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
