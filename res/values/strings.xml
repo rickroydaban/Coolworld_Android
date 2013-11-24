@@ -1,12 +1,14 @@
 <resources>
    <string name="app_name">Coolworld</string>
    <string name="menu_settings">Settings</string>
-   <string name="welcomeTextHeader">Welcome Text Header</string>
-   <string name="welcomeTextBody">Welcome Text Body</string>
-   <string name="signinButtonString">Sign In</string>
-   <string name="signupButtonString">Sign Up</string>
-   <string name="apuriButtonString">Appuri</string>
-   <string name="creditText">Credits</string>
+   <string name="welcomeTextHeader">さぁ、世界へ飛び出そう！</string>
+   <string name="welcomeTextBody">クール・ワールドは旅行に役に立つ
+情報を提供しています
+</string>
+   <string name="signinButtonString">ログイン</string>
+   <string name="signupButtonString">ユーザー登録</string>
+   <string name="apuriButtonString">アプリの使い方を見てみる</string>
+   <string name="creditText">SOSEN INTERNATIONAL 2013 ALL RIGHTS RESERVED.</string>
    <string name="logo_desc">Logo Description</string>
    <string name="signinHeaderString">Sign in Header</string>
    <string name="signupSigninString">Sign in</string>
@@ -14,9 +16,17 @@
    <string name="signinPasswordFieldHint">Password</string>
    <string name="signinForgotPasswordString">Forgot Password</string>
    <string name="countryImage">Country Image</string>
-   <string name="countrySelectDescription">Country Description</string>
+   <string name="countrySelectDescription">エリアを選択してください</string>
+   <string name="coolsiteSelectDescription">国を選択してください</string>
+   <string name="informationSelectDescription">国を選択してください</string>
    <string name="action_settings">Action Settings</string>
    <string name="urlRootLink">http://sosencool.heteml.jp/</string>
    <string name="featuredImage">Featured Image</string>
    <string name="searchHint">Search</string>
+   <string name="toggleOnString">On</string>
+   <string name="toggleOffString">Off</string>
+   <string name="mapFilterItemsHeader">Support</string>
+   <string name="categorySelectDescription">Category</string>
+   <string name="listNodeImage">Image</string>
+   <string name="homeTabDescription">Home Tab Description</string>
 </resources>

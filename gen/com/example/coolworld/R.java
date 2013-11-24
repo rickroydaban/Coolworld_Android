@@ -128,21 +128,13 @@ containing a value of this type.
          */
         public static final int zOrderOnTop=0x7f01000d;
     }
-    public static final class dimen {
-        /** 
-         Customize dimensions originally defined in res/values/dimens.xml (such as
-         screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
-    
-         */
-        public static final int activity_horizontal_margin=0x7f060000;
-    }
     public static final class drawable {
-        public static final int button_gen=0x7f020000;
-        public static final int category=0x7f020001;
-        public static final int coolworld_logo=0x7f020002;
-        public static final int dark_blue=0x7f020003;
-        public static final int driverg1411000300=0x7f020004;
-        public static final int driverr1521000200=0x7f020005;
+        public static final int account=0x7f020000;
+        public static final int backbtn=0x7f020001;
+        public static final int button_gen=0x7f020002;
+        public static final int category=0x7f020003;
+        public static final int coolworld_logo=0x7f020004;
+        public static final int dark_blue=0x7f020005;
         public static final int gradient_bg=0x7f020006;
         public static final int gradient_bg_hover=0x7f020007;
         public static final int ic_launcher=0x7f020008;
@@ -150,49 +142,67 @@ containing a value of this type.
         public static final int index_bg=0x7f02000a;
         public static final int info=0x7f02000b;
         public static final int list_selector=0x7f02000c;
-        public static final int map=0x7f02000d;
-        public static final int no_image=0x7f02000e;
-        public static final int search=0x7f02000f;
-        public static final int settings=0x7f020010;
-        public static final int stan_blue=0x7f020011;
-        public static final int whitebutton=0x7f020012;
+        public static final int list_selector_black=0x7f02000d;
+        public static final int map=0x7f02000e;
+        public static final int no_image=0x7f02000f;
+        public static final int search=0x7f020010;
+        public static final int settings=0x7f020011;
+        public static final int stan_blue=0x7f020012;
+        public static final int white_button=0x7f020013;
+        public static final int whitebutton=0x7f020014;
     }
     public static final class id {
-        public static final int action_settings=0x7f040022;
+        public static final int accountButton=0x7f040021;
+        public static final int action_settings=0x7f040032;
         public static final int apuriButton=0x7f040009;
-        public static final int category=0x7f040017;
-        public static final int countrySelectdescription=0x7f04001a;
+        public static final int backButton=0x7f04001f;
+        public static final int category=0x7f040019;
+        public static final int categoryList=0x7f040012;
+        public static final int categoryName=0x7f04001c;
         public static final int creditsText=0x7f04000a;
+        public static final int englishName=0x7f04001e;
+        public static final int featuredImage=0x7f040025;
         public static final int forgotPasswordText=0x7f04000f;
+        public static final int frontCover=0x7f040022;
         public static final int hybrid=0x7f040004;
-        public static final int img=0x7f040012;
-        public static final int list=0x7f04001b;
-        public static final int list_image=0x7f040014;
-        public static final int listview_header=0x7f040019;
-        public static final int listview_header_container=0x7f04001d;
+        public static final int itemAreaLocated=0x7f040029;
+        public static final int itemClass=0x7f04002a;
+        public static final int itemEnglishName=0x7f040028;
+        public static final int itemImage=0x7f040026;
+        public static final int itemList=0x7f040013;
+        public static final int itemLocalName=0x7f040027;
+        public static final int item_header=0x7f04002c;
+        public static final int list=0x7f040024;
+        public static final int listview_description=0x7f040023;
+        public static final int listview_header_container=0x7f04002d;
+        public static final int listview_header_image=0x7f040020;
+        public static final int localName=0x7f04001b;
         public static final int map=0x7f040011;
-        public static final int mobileText=0x7f040018;
+        public static final int mobileText=0x7f04001a;
+        public static final int node_image=0x7f040016;
         public static final int none=0x7f040000;
         public static final int normal=0x7f040001;
         public static final int pager=0x7f04000b;
         public static final int passwordField=0x7f04000e;
-        public static final int relativeLayout=0x7f04001c;
         public static final int satellite=0x7f040002;
-        public static final int searchField=0x7f04001e;
+        public static final int searchField=0x7f04002e;
         public static final int signinButton=0x7f040007;
         public static final int signinHeader=0x7f04000c;
         public static final int signupButton=0x7f040008;
         public static final int signupText=0x7f040010;
-        public static final int tabIcon=0x7f040020;
-        public static final int tabTitle=0x7f040021;
-        public static final int tabs_layout=0x7f04001f;
+        public static final int tabIcon=0x7f040030;
+        public static final int tabTitle=0x7f040031;
+        public static final int tabs_layout=0x7f04002f;
         public static final int terrain=0x7f040003;
-        public static final int thumbnail=0x7f040013;
-        public static final int title=0x7f040015;
+        public static final int text=0x7f040014;
+        public static final int thumbnail=0x7f040015;
+        public static final int title=0x7f040018;
+        public static final int togglebutton=0x7f04001d;
         public static final int usernameField=0x7f04000d;
         public static final int welcomeTextBody=0x7f040006;
         public static final int welcomeTextHeader=0x7f040005;
-        public static final int wordLayout=0x7f040016;
+        public static final int wordLayout=0x7f040017;
+        public static final int yellowButton=0x7f04002b;
     }
     public static final class layout {
         public static final int activity_home=0x7f030000;
@@ -201,17 +211,27 @@ containing a value of this type.
         public static final int activity_signin=0x7f030003;
         public static final int fragment_map=0x7f030004;
         public static final int fragment_mapinfo=0x7f030005;
-        public static final int listnode_country=0x7f030006;
-        public static final int listnode_info=0x7f030007;
-        public static final int listview=0x7f030008;
-        public static final int listview_search=0x7f030009;
-        public static final int tab_layout=0x7f03000a;
+        public static final int fragment_pager_list1=0x7f030006;
+        public static final int fragment_pager_list2=0x7f030007;
+        public static final int listnode_home_activity=0x7f030008;
+        public static final int listnode_itemdata=0x7f030009;
+        public static final int listnode_mapcategories=0x7f03000a;
+        public static final int listnode_mapitem=0x7f03000b;
+        public static final int listnode_simple=0x7f03000c;
+        public static final int listview_front_covered=0x7f03000d;
+        public static final int listview_information=0x7f03000e;
+        public static final int listview_item_data=0x7f03000f;
+        public static final int listview_map_item=0x7f030010;
+        public static final int listview_preset=0x7f030011;
+        public static final int listview_search=0x7f030012;
+        public static final int listview_simple_header=0x7f030013;
+        public static final int tab_layout=0x7f030014;
     }
     public static final class menu {
-        public static final int main=0x7f080000;
+        public static final int main=0x7f070000;
     }
     public static final class string {
-        public static final int action_settings=0x7f050021;
+        public static final int action_settings=0x7f050023;
         public static final int app_name=0x7f050011;
         public static final int apuriButtonString=0x7f050017;
         /**   Title for notification shown when GooglePlayServices is unavailable [CHAR LIMIT=70] 
@@ -223,6 +243,7 @@ containing a value of this type.
         /**   Requested by string saying which app requested the notification. [CHAR LIMIT=42] 
          */
         public static final int auth_client_requested_by_msg=0x7f050010;
+        public static final int categorySelectDescription=0x7f05002a;
         /**  Button in confirmation dialog to enable Google Play services.  Clicking it
         will direct user to application settings of Google Play services where they
         can enable it [CHAR LIMIT=40] 
@@ -276,13 +297,18 @@ containing a value of this type.
         find the service-side assets. [CHAR LIMIT=25] 
          */
         public static final int common_signin_button_text_long=0x7f05000d;
+        public static final int coolsiteSelectDescription=0x7f050021;
         public static final int countryImage=0x7f05001f;
         public static final int countrySelectDescription=0x7f050020;
         public static final int creditText=0x7f050018;
-        public static final int featuredImage=0x7f050023;
+        public static final int featuredImage=0x7f050025;
+        public static final int homeTabDescription=0x7f05002c;
+        public static final int informationSelectDescription=0x7f050022;
+        public static final int listNodeImage=0x7f05002b;
         public static final int logo_desc=0x7f050019;
+        public static final int mapFilterItemsHeader=0x7f050029;
         public static final int menu_settings=0x7f050012;
-        public static final int searchHint=0x7f050024;
+        public static final int searchHint=0x7f050026;
         public static final int signinButtonString=0x7f050015;
         public static final int signinForgotPasswordString=0x7f05001e;
         public static final int signinHeaderString=0x7f05001a;
@@ -290,7 +316,9 @@ containing a value of this type.
         public static final int signinUsernameFieldHint=0x7f05001c;
         public static final int signupButtonString=0x7f050016;
         public static final int signupSigninString=0x7f05001b;
-        public static final int urlRootLink=0x7f050022;
+        public static final int toggleOffString=0x7f050028;
+        public static final int toggleOnString=0x7f050027;
+        public static final int urlRootLink=0x7f050024;
         public static final int welcomeTextBody=0x7f050014;
         public static final int welcomeTextHeader=0x7f050013;
     }
@@ -307,7 +335,7 @@ containing a value of this type.
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f070000;
+        public static final int AppBaseTheme=0x7f060000;
     }
     public static final class styleable {
         /** Attributes that can be used with a MapAttrs.

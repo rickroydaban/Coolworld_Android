@@ -1,0 +1,106 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:orientation="vertical"
+	android:background="#EFEFEF">
+     
+  <LinearLayout 
+  	android:layout_width="fill_parent"
+  	android:layout_height="wrap_content"
+  	android:orientation="horizontal">
+      
+    <ImageView 
+       android:id="@+id/backButton"
+       android:layout_height="fill_parent"
+       android:layout_width="0dp"
+       android:layout_weight="1"
+       android:src="@drawable/backbtn"
+       android:contentDescription="@string/listNodeImage"/>
+      
+  	<ImageView 	
+			android:id="@+id/listview_header_image"
+	    android:layout_height="wrap_content"
+	    android:layout_width="0dp"
+			android:layout_weight="3"
+	    android:contentDescription="@string/logo_desc"
+	    android:src="@drawable/coolworld_logo"/>  
+	    
+  	<ImageView 
+  	  android:id="@+id/accountButton"
+  	  android:layout_height="fill_parent"
+  	  android:layout_width="0dp"
+  	  android:layout_weight="1"
+  	  android:contentDescription="@string/listNodeImage"
+  	  android:src="@drawable/account"/>
+    
+  </LinearLayout>  
+    
+  <LinearLayout 
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+      
+  	<ImageView 
+	    android:id="@+id/itemImage"
+	    android:layout_height="wrap_content"
+	    android:layout_width="0dp"
+	    android:layout_weight="1"
+	    android:contentDescription="@string/listNodeImage"
+	    android:src="@drawable/backbtn"/>  
+	    
+  	<LinearLayout 
+  	  android:layout_height="fill_parent"
+  	  android:layout_width="0dp"
+  	  android:layout_weight="3"
+  	  android:orientation="vertical">
+  	    
+		 	<TextView 
+		    android:id="@+id/itemLocalName"
+			  android:layout_height="wrap_content"
+			  android:layout_width="fill_parent"
+			  android:textStyle="bold"
+			  android:paddingTop="5dp"
+				android:padding="5dp"
+				android:text="sample"/>
+
+		 	<TextView 
+		    android:id="@+id/itemEnglishName"
+			  android:layout_height="wrap_content"
+			  android:layout_width="fill_parent"
+				android:text="sample"/>
+
+		 	<TextView 
+		    android:id="@+id/itemAreaLocated"
+			  android:layout_height="wrap_content"
+			  android:layout_width="fill_parent"
+				android:text="sample"/>
+
+		 	<TextView 
+		    android:id="@+id/itemClass"
+			  android:layout_height="wrap_content"
+			  android:layout_width="fill_parent"
+				android:text="sample"/>
+		 			 			 			 			 			 		    	    
+  	</LinearLayout>
+  	
+  </LinearLayout>
+  
+  <Button 
+    android:id="@+id/yellowButton"
+    android:layout_height="wrap_content"
+    android:layout_width="fill_parent"
+    android:text="Yellow Button"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    android:background="#9E9E00"/>
+   
+	
+	<ListView
+		android:id="@+id/list"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:divider="#b5b5b5"
+		android:dividerHeight="1dp"
+		android:listSelector="@drawable/list_selector" />
+
+</LinearLayout>

@@ -1,70 +1,68 @@
-package com.example.coolworld.threads;
+	package com.example.coolworld.threads;
 
-import java.io.IOException;
 import java.util.HashMap;
 
-import org.apache.http.client.ClientProtocolException;
-import org.json.JSONException;
-import org.json.JSONObject;
-
+import android.app.ProgressDialog;
 import android.content.Intent;
-import android.os.AsyncTask;
-import android.util.Log;
+import android.os.Handler;
+import android.os.Looper;
 import android.widget.Toast;
+import com.example.coolworld.activities.SigninActivity;
+import com.example.coolworld.gateways.OfflineGateway;
+import com.example.coolworld.gateways.OnlineGateway;
+import com.example.coolworld.listactivities.CountryLister;
 
-import com.example.coolworld.BasicListActivity;
-import com.example.coolworld.Jsonizer;
-import com.example.coolworld.SigninActivity;
-
-public class SigninAuthenticator extends AsyncTask<String, Void, String> {
+public class SigninAuthenticator implements Runnable {
 	private SigninActivity signinActivity;
-	private HashMap<String, String> user;
-	private Jsonizer authenClient;
-
-	public SigninAuthenticator(SigninActivity pSigninActivity, String url) {
-		signinActivity = pSigninActivity;
-		
-		user = new HashMap<String, String>();		
-		user.put("email", signinActivity.usernameField.getText().toString());
-		user.put("password", signinActivity.passwordField.getText().toString());						
-		user.put("tags", "prop:users");
-		user.put("f", "authenticate");
-		
-		authenClient = new Jsonizer(url);		
-	}
-	    
-	protected String doInBackground(String... params) {
-		try {
-			JSONObject j = authenClient.get("", user);
-			Log.d("JSONObject", j.getString("en_name"));
-			return j.getString("en_name");
-		} catch (ClientProtocolException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (JSONException e) {
-			e.printStackTrace();
-		}							
+	private HashMap<String, String> userMap;
+	private ProgressDialog pd;
+	private OnlineGateway onlineGateway;
+	private OfflineGateway offlineGateway;
+	private String username;
 	
-		return "false";
-	}
+	public SigninAuthenticator(SigninActivity signinActivity, HashMap<String, String> userMap) {
+		this.signinActivity = signinActivity;
+		this.userMap = userMap;
+		onlineGateway = OnlineGateway.getInstance(signinActivity);
+		offlineGateway = OfflineGateway.getInstance(signinActivity);
+		
+		pd = new ProgressDialog(signinActivity);
+		pd.setMessage("Please Wait. Logging in...");
+		pd.show();
+	}	    
 
-		protected void onPostExecute(String userData) {
-			super.onPostExecute(userData);
+	@Override
+	public void run() {
+		username = onlineGateway.getSignedInUser(userMap);
 
-			if(userData.equals("false")){
-				Log.d("WRONG","LOGIN");
-				Toast.makeText(signinActivity, "Login Failed!", Toast.LENGTH_SHORT).show();
-			}else{
-				Intent i = new Intent(signinActivity, BasicListActivity.class);
-				i.putExtra("tags", "prop:countries");
-				i.putExtra("f", "getAllData");
-				i.putExtra("nextActivity", "makeCoolsiteList");
-				
-				signinActivity.startActivity(i);
-			}
+		new Handler(Looper.getMainLooper()).post(new Runnable() {				
+	  	@Override
+	  	public void run() {
+				pd.dismiss();				
+	  	}
+  	});
+		
+		if(username==null || username.equals("false")){
+			new Handler(Looper.getMainLooper()).post(new Runnable() {				
+		  	@Override
+		  	public void run() {
+		  		if(username==null)
+		  			Toast.makeText(signinActivity, "Connection Error!", Toast.LENGTH_LONG).show();
+		  		else
+						Toast.makeText(signinActivity, "Username or Password is incorrect!", Toast.LENGTH_LONG).show();
+		  	}
+	  	});
+		}else{
+			offlineGateway.saveUsername(username);
+			new Handler(Looper.getMainLooper()).post(new Runnable() {				
+		  	@Override
+		  	public void run() {
+					signinActivity.startActivity(new Intent(signinActivity, new CountryLister().getClass()));
+		  	}
+	  	});
 		}
-			
-	}
+
+	}			
+}
 	
 	

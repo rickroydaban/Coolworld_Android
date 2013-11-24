@@ -1,14 +1,32 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"  
-	xmlns:tools="http://schemas.android.com/tools"  
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="fill_parent"
-	android:layout_height="fill_parent" >  
-      
-	<ImageView 
-	  android:id="@+id/img"
-	  android:src="@drawable/driverg1411000300" 
-	  android:contentDescription="AVATAR" 
-	  android:scaleType="fitXY"
-	  android:layout_height="match_parent"
-	  android:layout_width="match_parent"/>
-		
-</LinearLayout>  
+	android:layout_height="fill_parent"
+	android:orientation="vertical"
+	android:background="#ABABAB">
+
+    <ListView
+        android:id="@+id/categoryList"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:divider="#404040"
+        android:dividerHeight="1dp"
+        android:listSelector="#404040" />
+    	
+    <TextView 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#202020"
+        android:padding="10dp"
+        android:textAlignment="center"
+        android:gravity="center_horizontal"
+        android:text="@string/mapFilterItemsHeader"/>
+    
+    <ListView
+        android:id="@+id/itemList"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:divider="#EFEFEF"
+        android:dividerHeight="2dp"
+        android:listSelector="#606060"/>
+    
+</LinearLayout>

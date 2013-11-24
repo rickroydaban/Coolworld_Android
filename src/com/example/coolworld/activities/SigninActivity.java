@@ -1,7 +1,8 @@
-package com.example.coolworld;
+package com.example.coolworld.activities;
 
+import java.util.HashMap;
+import com.example.coolworld.R;
 import com.example.coolworld.threads.SigninAuthenticator;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,9 +12,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class SigninActivity extends Activity implements OnClickListener{
-	public EditText usernameField, passwordField;
-	public TextView forgotPassword, signup;
-	public Button signinButton;
+	private EditText usernameField, passwordField;
+	private TextView forgotPassword, signup;
+	private Button signinButton;
+	
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -32,7 +34,13 @@ public class SigninActivity extends Activity implements OnClickListener{
 	@Override
 	public void onClick(View clicked) {
 		if(clicked == signinButton){
-			new SigninAuthenticator(this,getResources().getString(R.string.urlRootLink)).execute();			
+			HashMap<String, String> userMap = new HashMap<String, String>();		
+			userMap.put("email", usernameField.getText().toString());
+			userMap.put("password", passwordField.getText().toString());						
+			userMap.put("tags", "prop:users");
+			userMap.put("f", "authenticate");
+			
+			new Thread(new SigninAuthenticator(this, userMap)).start();			
 		}else if(clicked == signup){
 			System.out.println("Android: Switch Activity to Sign up");
 		}else if(clicked == forgotPassword){

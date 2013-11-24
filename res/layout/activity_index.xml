@@ -25,6 +25,7 @@
             android:textStyle="bold"
             android:textSize="25sp"
             android:textAlignment="center"
+            android:textColor="#FFF"
             android:layout_height="wrap_content"
 						android:layout_width="fill_parent"
 						android:gravity="center_horizontal"
@@ -51,7 +52,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                style="@android:attr/buttonBarButtonStyle"
+                android:background="@drawable/stan_blue"
                 android:text="@string/signinButtonString"/>
             
             <Button 
@@ -59,7 +60,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                style="@android:attr/buttonBarButtonStyle"
+                android:background="@drawable/stan_blue"
 	              android:text="@string/signupButtonString"/>
             
         </LinearLayout>
@@ -69,7 +70,8 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textColor="#000"
-						android:gravity="center_horizontal"
+						android:gravity="center"
+						android:background="@drawable/white_button"
 	          android:text="@string/apuriButtonString"/>
             
         <TextView 

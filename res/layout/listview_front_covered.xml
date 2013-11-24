@@ -1,9 +1,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="fill_parent"
-	android:layout_height="fill_parent"
+	android:layout_height="wrap_content"
 	android:orientation="vertical"
-	android:background="#EFEFEF">    
-   
+	android:background="#EFEFEF">
+     
   <LinearLayout 
   	android:layout_width="fill_parent"
   	android:layout_height="wrap_content"
@@ -34,29 +34,27 @@
   	  android:src="@drawable/account"/>
     
   </LinearLayout>  
-     	     
-	<LinearLayout 
-		android:id="@+id/listview_header_container"
-		android:layout_height="wrap_content"
-		android:layout_width="fill_parent"
-		android:padding="10dp"
-		android:background="#DEDEDE">
-      
-		<EditText 
-		  android:id="@+id/searchField"
-		  android:layout_marginTop="10dp"
-		  android:layout_width="fill_parent"
-		  android:layout_height="wrap_content"
-		  android:hint="@string/searchHint"/>
-			
-  </LinearLayout>  
-	
-  <ListView
-    android:id="@+id/list"
-    android:layout_width="fill_parent"
+    
+  <ImageView 
+    android:id="@+id/frontCover"
     android:layout_height="wrap_content"
-    android:divider="#b5b5b5"
-    android:dividerHeight="1dp"
-    android:listSelector="@drawable/list_selector" />
+    android:layout_width="fill_parent"
+    android:contentDescription="@string/listNodeImage"/>  
+  
+	<TextView 
+    android:id="@+id/listview_description"
+	  android:layout_height="wrap_content"
+	  android:layout_width="fill_parent"
+	  android:paddingTop="5dp"
+		android:padding="5dp"
+	  android:text="@string/countrySelectDescription"/>
+	
+	<ListView
+		android:id="@+id/list"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:divider="#b5b5b5"
+		android:dividerHeight="1dp"
+		android:listSelector="@drawable/list_selector" />
 
 </LinearLayout>

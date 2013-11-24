@@ -5,8 +5,8 @@ import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Handler;
@@ -14,40 +14,37 @@ import android.os.Looper;
 import android.widget.ImageView;
 
 public class ImageDownloader implements Runnable{
-	Activity activity;
-	ImageView countryFlagView;
+	ImageView image;
 	String imageUrl;
-	private Handler handler;
+	ProgressDialog pd;
 	private Bitmap bitmap;
-	ProgressDialog progressDialog;
 	
-	public ImageDownloader(Activity a, ImageView pCountryFlag, String url, ProgressDialog p){
-		activity = a;
-		imageUrl = url;
-		progressDialog = p;
-		countryFlagView = pCountryFlag;
-	  handler = new Handler(Looper.getMainLooper());
-	  p.setMessage("Please Wait. Downloading Country Flags...");
-	  p.show();
+	public ImageDownloader(Context context, ImageView image, String imageUrl){
+		this.image = image;
+		this.imageUrl = imageUrl;
+		pd = new ProgressDialog(context);
+		pd.setMessage("Downloading Images. Please Wait.");
+		pd.show();
 	}
 	
 	@Override
-	public void run() {
-    try {
-      bitmap = BitmapFactory.decodeStream((InputStream)new URL(imageUrl).getContent());
-  	  handler.post(new Runnable() {				
-  	  	@Override
-  	  	public void run() {
-  	  		countryFlagView.setImageBitmap(bitmap);
-  	  		progressDialog.hide();
-  	  	}
-  	  });
-    } catch (MalformedURLException e) {
-      e.printStackTrace();
-    } catch (IOException e) {
-      e.printStackTrace();
-    }        
+	public void run(){
+		try {
+			bitmap = BitmapFactory.decodeStream((InputStream)new URL(imageUrl).getContent());
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
+		new Handler(Looper.getMainLooper()).post(new Runnable() {				
+	  	@Override
+	  	public void run() {
+				image.setImageBitmap(bitmap);
+	  		pd.dismiss();
+	  	}
+  	});			
 	}
-
 }
